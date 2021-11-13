@@ -1,0 +1,15 @@
+.slider {
+    display: flex;
+}
+.slider li {
+    flex-basis: 200px;
+    min-width: 0;
+    list-style: none;
+    border: 1px solid red;
+}
+
+.slider li h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: brown;
+}
