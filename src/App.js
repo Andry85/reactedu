@@ -12,8 +12,7 @@ console.log(browser.getBrowser());
 const isValidBrowser = browser.satisfies({
   // declare browsers per OS
   windows: {
-    "internet explorer": ">10",
-    "edge": "> 90",
+    "microsoft edge": ">=18",
   },
   macos: {
     safari: ">10.1"
