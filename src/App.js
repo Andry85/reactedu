@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './App.css';
 import Form from './components/Form/Form';
 import Popup from './components/Popup/Popup';
@@ -6,6 +6,7 @@ import Bowser from "bowser";
 import Slider from './components/Slider/Slider';
 import Modal from './components/Modal/Modal';
 import Portal from './components/Portal/Portal';
+import {ThemeContext} from './contexts/theme-context';
 
 
 const browser = Bowser.getParser(window.navigator.userAgent);
@@ -38,6 +39,8 @@ console.log(isValidBrowser, 'isValidBrowser');
 
 
 function App() {
+
+  const themeColor = useContext(ThemeContext);
 
   const [isBtnPressed, setIsBtnPressed] = useState(false);
   const [count, setCount] = useState(0);
@@ -74,7 +77,7 @@ function App() {
       <Slider/>
       <Modal/>
 
-      <p>Ви натиснули {count} разів</p>
+      <p style={{color: themeColor.foreground }}>Ви натиснули {count} разів</p>
       <button onClick={() => setCount(count + 1)}>
         Натисни мене
       </button>
